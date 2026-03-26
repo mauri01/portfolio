@@ -69,6 +69,27 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.3);
     }
+
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #6b46c1;
+      background: rgba(107, 70, 193, 0.08);
+      border: 1px solid rgba(107, 70, 193, 0.2);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover {
+      background: rgba(107, 70, 193, 0.15);
+      border-color: rgba(107, 70, 193, 0.4);
+      transform: translateY(-1px);
+    }
     
     .text-gradient {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -103,11 +124,19 @@
         </div>
       </div>
 
+      <!-- Nav Menu -->
+      <div class="flex flex-wrap justify-center sm:justify-start gap-2 mb-8">
+        <a href="#apps" class="nav-pill">📱 Aplicaciones</a>
+        <a href="#saas" class="nav-pill">🌐 SaaS</a>
+        <a href="#contenido" class="nav-pill">🎬 Contenido</a>
+        <a href="#contacto" class="nav-pill">💬 Contacto</a>
+      </div>
+
       <!-- Divider -->
       <div class="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent mb-8"></div>
 
       <!-- Apps Section -->
-      <div class="mb-8">
+      <div class="mb-8" id="apps">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
           <span>📱</span> Mis Aplicaciones
         </h2>
@@ -241,8 +270,68 @@
         </div>
       </div>
 
+      <!-- SaaS Section -->
+      <div class="mb-8" id="saas">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+          <span>🌐</span> SaaS
+        </h2>
+        <div class="flex flex-wrap gap-4">
+
+          <!-- InmoArg -->
+          <a
+            href="https://inmoarg.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-hover bg-white rounded-2xl p-6 flex-1 min-w-[250px] shadow-md"
+          >
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-16 h-16 rounded-xl shadow-sm flex items-center justify-center text-3xl bg-gradient-to-br from-green-100 to-emerald-200">🏠</div>
+              <div>
+                <h3 class="font-bold text-gray-800 text-lg">InmoArg</h3>
+                <p class="text-sm text-gray-500">Gestión de Alquileres</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm">
+              Sistema completo para gestionar alquileres en Argentina. Propietarios, inquilinos, contratos y pagos en un solo lugar.
+            </p>
+            <div class="mt-4 flex items-center text-green-600 font-medium text-sm">
+              <span>Abrir plataforma</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Actualizar Alquiler -->
+          <a
+            href="https://actualizaralquiler.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-hover bg-white rounded-2xl p-6 flex-1 min-w-[250px] shadow-md"
+          >
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-16 h-16 rounded-xl shadow-sm flex items-center justify-center text-3xl bg-gradient-to-br from-blue-100 to-cyan-200">📈</div>
+              <div>
+                <h3 class="font-bold text-gray-800 text-lg">Actualizar Alquiler</h3>
+                <p class="text-sm text-gray-500">Índices de Alquiler AR</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm">
+              Consultá los índices de actualización de alquiler en Argentina. Datos actualizados para propietarios e inquilinos.
+            </p>
+            <div class="mt-4 flex items-center text-blue-600 font-medium text-sm">
+              <span>Ver índices</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
       <!-- Content Section -->
-      <div class="mb-8">
+      <div class="mb-8" id="contenido">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
           <span>🎬</span> Contenido
         </h2>
@@ -325,11 +414,11 @@
       <div class="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent my-8"></div>
 
       <!-- CTA Section -->
-      <div class="space-y-4">
+      <div class="space-y-4" id="contacto">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
           <span>💬</span> Contacto
         </h2>
-        
+
         <div class="grid sm:grid-cols-2 gap-4">
           <a 
             href="https://www.youtube.com/channel/UCvSBVjSUY5qKqZ7Gz4A-uvA" 
@@ -337,21 +426,26 @@
             rel="noopener noreferrer"
             class="card-hover bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-5 text-center"
           >
-            <p class="text-gray-700 font-medium">
-              Diario de Desarrollo
-            </p>
+            <p class="text-gray-700 font-medium">Diario de Desarrollo</p>
             <p class="text-purple-600 font-bold mt-2">Ver Videos →</p>
           </a>
 
-          <a 
-            href="mailto:segurajavier730@gmail.com"
-            class="card-hover bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl p-5 text-center"
+          <button
+            onclick="copyEmail()"
+            id="email-btn"
+            class="card-hover bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl p-5 text-center w-full cursor-pointer border-0"
           >
-            <p class="text-gray-700 font-medium">
-              ¿Tenés un proyecto en mente?
-            </p>
-            <p class="text-blue-600 font-bold mt-2">Contactame →</p>
-          </a>
+            <p class="text-gray-700 font-medium">¿Tenés un proyecto en mente?</p>
+            <p class="text-blue-600 font-bold mt-2" id="email-label">Copiar email →</p>
+          </button>
+        </div>
+
+        <!-- Email visible + redes para contacto -->
+        <div class="bg-gray-50 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-center sm:text-left">
+            <p class="text-sm text-gray-500 mb-1">También podés escribirme a</p>
+            <p class="font-mono text-gray-800 font-medium text-sm select-all">segurajavier730@gmail.com</p>
+          </div>
         </div>
       </div>
 
@@ -364,5 +458,23 @@
 
   </main>
 
-</body>
-</html>
+<script>
+  function copyEmail() {
+    const email = 'segurajavier730@gmail.com';
+    navigator.clipboard.writeText(email).then(function() {
+      const label = document.getElementById('email-label');
+      label.textContent = '¡Email copiado! ✓';
+      label.classList.remove('text-blue-600');
+      label.classList.add('text-green-600');
+      setTimeout(function() {
+        label.textContent = 'Copiar email →';
+        label.classList.remove('text-green-600');
+        label.classList.add('text-blue-600');
+      }, 2500);
+    }).catch(function() {
+      // Fallback: select text
+      const label = document.getElementById('email-label');
+      label.textContent = 'segurajavier730@gmail.com';
+    });
+  }
+</script>
